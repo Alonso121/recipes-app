@@ -1,32 +1,42 @@
 import React from "react";
 import style from "./recipes.module.css";
 
-function Recipe({ key, title, calories, image, ingredients }) {
+function Recipe({ title, calories, image, ingredients, url }) {
   return (
-    <div className={style.recipe}>
-      <h1>{title}</h1>
-      <img className={style.image} src={image} key={key} alt=""></img>
-      <p>
-        <b>Calories: </b>
-        {Math.floor(calories)}
-      </p>
+    <div className={style.recipeSheet}>
+      <div className={style.recipe}>
+        <h1>{title}</h1>
+        <img className={style.image} src={image} alt=""></img>
+        <p>
+          <b>Calories: </b>
+          {Math.floor(calories)}
+        </p>
 
-      <ol>
-        {ingredients.map((ingredient) => (
-          <li>
-            <img
-              className={style.ingredient}
-              key={Math.random() * 10000000000}
-              src={ingredient.image}
-              alt=""
-            ></img>
-            <p>{ingredient.text}</p>
-            <p>
-              <i>{Math.floor(ingredient.weight)} g</i>
-            </p>
-          </li>
-        ))}
-      </ol>
+        <ol>
+          {ingredients.map((ingredient) => (
+            <li key={Math.random() * 10000000}>
+              <img
+                className={style.ingredient}
+                src={ingredient.image}
+                alt=""
+              ></img>
+              <p>{ingredient.text}</p>
+              <p>
+                <b>
+                  <i>{Math.floor(ingredient.weight)} g</i>
+                </b>
+              </p>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <p className={style.cookingLink}>
+        For cooking instructions click{" "}
+        <a href={url} target="_blank" rel="noreferrer">
+          here
+        </a>
+        !
+      </p>
     </div>
   );
 }

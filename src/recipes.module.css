@@ -4,31 +4,42 @@
   height: 80px;
 }
 
-.recipe {
+.recipeSheet {
+  width: 40%;
   border-radius: 10px;
+  background: white;
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
   margin: 20px;
+}
+
+.recipe {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  background: white;
   align-items: center;
-  width: 40%;
+  justify-content: space-around;
 }
 
 .image {
   border-radius: 50%;
-  width: 160px;
-  height: 160px;
+  width: 300px;
+  height: 300px;
   border: 3px solid blueviolet;
 }
 
 li {
   display: flex;
-  margin: 1rem;
+  margin: left;
   align-items: center;
+  margin-top: 0.5rem;
 }
 
 li p {
   margin: 1rem;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 0px;
+}
+
+.cookingLink {
+  text-align: left;
 }
