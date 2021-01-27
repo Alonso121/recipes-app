@@ -27,6 +27,11 @@
   margin: 1rem;
 }
 
+.form-input label {
+  margin-right: 1rem;
+  color: #4e0394;
+}
+
 .search-bar {
   width: 50%;
   border: none;
@@ -44,4 +49,14 @@
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-form {
+    min-height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+  }
 }
