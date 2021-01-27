@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import CaloriesInput from "./FormComp/CaloriesInput";
 import DietInput from "./FormComp/DietInput";
 import MainInput from "./FormComp/MainInput";
-import { KEYS } from "./keys";
 import Recipe from "./Recipe";
 
 function Recipes() {
@@ -18,7 +17,7 @@ function Recipes() {
 
   useEffect(() => {
     fetch(
-      `https://api.edamam.com/search?q=${foodInfo.foodType}&app_id=${KEYS.APP_ID}&app_key=${KEYS.APP_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}&to=30`
+      `${process.env.REACT_APP_EDAMAM_URL}?q=${foodInfo.foodType}&app_id=${process.env.REACT_APP_EDAMAM_ID}&app_key=${process.env.REACT_APP_EDAMAM_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}&to=30`
     )
       .then((res) => res.json())
       .then((result) => {
