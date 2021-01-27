@@ -22,7 +22,6 @@ function Recipes() {
       .then((res) => res.json())
       .then((result) => {
         setRecipes(result.hits);
-        console.log(result);
       });
   }, [foodInfo]);
 
