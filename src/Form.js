@@ -17,12 +17,12 @@ function Recipes() {
 
   useEffect(() => {
     fetch(
-      `${process.env.REACT_APP_EDAMAM_URL}?q=${foodInfo.foodType}&app_id=${process.env.REACT_APP_EDAMAM_ID}&app_key=${process.env.REACT_APP_EDAMAM_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}&to=30`
+      `${process.env.REACT_APP_EDAMAM_URL}?q=${foodInfo.foodType}&app_id=${process.env.REACT_APP_EDAMAM_ID}&app_key=${process.env.REACT_APP_EDAMAM_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}&to=30`,
+      { mode: "cors" }
     )
       .then((res) => res.json())
       .then((result) => {
         setRecipes(result.hits);
-        console.log(result);
       });
   }, [foodInfo]);
 
