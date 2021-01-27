@@ -13,13 +13,12 @@ function Recipes() {
   });
   const [search, setSearch] = useState("");
   const [recipes, setRecipes] = useState([]);
-  const [maxCalories, setMaxCalories] = useState();
+  const [maxCalories, setMaxCalories] = useState(300);
   const [dietType, setDietType] = useState("balanced");
 
-  // https://api.edamam.com/search?q=chicken&app_id=${YOUR_APP_ID}&app_key=${YOUR_APP_KEY}&from=0&to=3&calories=591-722&health=alcohol-free
   useEffect(() => {
     fetch(
-      `https://api.edamam.com/search?q=${foodInfo.foodType}&app_id=${KEYS.APP_ID}&app_key=${KEYS.APP_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}`
+      `https://api.edamam.com/search?q=${foodInfo.foodType}&app_id=${KEYS.APP_ID}&app_key=${KEYS.APP_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}&to=30`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -31,20 +30,24 @@ function Recipes() {
   function handleSubmit(e) {
     e.preventDefault();
     setFoodInfo({ foodType: search, inquireCal: maxCalories, diet: dietType });
+    setSearch("");
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit} className="search-form">
-        <MainInput setSearch={setSearch} />
-        <CaloriesInput search={search} setMaxCalories={setMaxCalories} />
+        <MainInput search={search} setSearch={setSearch} />
+        <CaloriesInput
+          maxCalories={maxCalories}
+          setMaxCalories={setMaxCalories}
+        />
         <DietInput setDietType={setDietType} />
       </form>
 
       <div className="recipes">
-        {recipes.map((recipe) => (
+        {recipes.map((recipe, index) => (
           <Recipe
-            key={Math.random() * 10000000}
+            key={index}
             title={recipe.recipe.label}
             calories={recipe.recipe.calories}
             image={recipe.recipe.image}

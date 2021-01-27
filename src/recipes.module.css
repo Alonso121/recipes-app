@@ -4,12 +4,19 @@
   height: 80px;
 }
 
+.title {
+  margin: 2rem;
+  text-align: center;
+}
+
 .recipeSheet {
-  width: 40%;
+  width: 30%;
   border-radius: 10px;
-  background: white;
+  background-color: #dbedfffa;
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
   margin: 20px;
+  min-width: 540px;
+  max-height: 73rem;
 }
 
 .recipe {
@@ -19,18 +26,37 @@
   justify-content: space-around;
 }
 
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem;
+  height: 6rem;
+}
+
 .image {
   border-radius: 50%;
-  width: 300px;
-  height: 300px;
+  width: 250px;
+  height: 250px;
   border: 3px solid blueviolet;
+}
+
+ol {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  height: 30rem;
+  box-shadow: 0px 5px 20px #e0c3fc;
+  margin: 1rem;
 }
 
 li {
   display: flex;
   margin: left;
   align-items: center;
-  margin-top: 0.5rem;
+  width: 400px;
+  margin: 0.5rem 2rem;
 }
 
 li p {
@@ -41,5 +67,15 @@ li p {
 }
 
 .cookingLink {
-  text-align: left;
+  text-align: center;
+  font-size: 1.5rem;
+  font-style: italic;
+}
+
+@media only screen and (max-width: 1200px) {
+  .recipeSheet {
+    width: 90%;
+    max-height: fit-content;
+    overflow: hidden;
+  }
 }

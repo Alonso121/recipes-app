@@ -5,7 +5,7 @@ function Recipe({ title, calories, image, ingredients, url }) {
   return (
     <div className={style.recipeSheet}>
       <div className={style.recipe}>
-        <h1>{title}</h1>
+        <h1 className={style.title}>{title}</h1>
         <img className={style.image} src={image} alt=""></img>
         <p>
           <b>Calories: </b>
@@ -13,8 +13,8 @@ function Recipe({ title, calories, image, ingredients, url }) {
         </p>
 
         <ol>
-          {ingredients.map((ingredient) => (
-            <li key={Math.random() * 10000000}>
+          {ingredients.map((ingredient, index) => (
+            <li key={index}>
               <img
                 className={style.ingredient}
                 src={ingredient.image}
@@ -23,7 +23,7 @@ function Recipe({ title, calories, image, ingredients, url }) {
               <p>{ingredient.text}</p>
               <p>
                 <b>
-                  <i>{Math.floor(ingredient.weight)} g</i>
+                  <i>{Math.floor(ingredient.weight)}g</i>
                 </b>
               </p>
             </li>

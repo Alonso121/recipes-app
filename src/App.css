@@ -18,6 +18,11 @@
   align-items: center;
 }
 
+.recipes {
+  display: flex;
+  align-items: flex-start;
+}
+
 .form-input {
   margin: 1rem;
 }
