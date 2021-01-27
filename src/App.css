@@ -6,7 +6,7 @@
 .title {
   text-align: center;
   font-size: 3rem;
-  color: #6100bd;
+  color: #500199;
   margin: 0;
   padding-top: 2rem;
 }
@@ -15,7 +15,7 @@
   min-height: 10vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
 }
 
 .recipes {
@@ -29,7 +29,9 @@
 
 .form-input label {
   margin-right: 1rem;
-  color: #4e0394;
+  color: #500199;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .search-bar {
@@ -39,10 +41,11 @@
 }
 
 .search-button {
-  background: lightcoral;
+  background: #500199;
   border: none;
   padding: 10px 20px;
   color: white;
+  cursor: pointer;
 }
 
 .recipes {

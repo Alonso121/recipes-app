@@ -3,7 +3,7 @@ import React from 'react'
 function CaloriesInput({maxCalories, setMaxCalories}) {
     return (
         <div className="form-input">
-            <label htmlFor="max-calories">Max. calories</label>
+            <label htmlFor="max-calories">Max. calories:</label>
         <input
           id="max-calories"
           value={maxCalories}

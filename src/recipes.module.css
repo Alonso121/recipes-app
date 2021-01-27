@@ -73,6 +73,15 @@ li p {
     max-height: fit-content;
     overflow: hidden;
   }
+  ol {
+    overflow-y: hidden;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  li {
+    width: 320px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -88,7 +97,8 @@ li p {
     border: 3px solid blueviolet;
   }
   .ingredient {
-    display: none;
+    height: 50px;
+    width: 50px;
   }
 
   li p {
@@ -97,10 +107,7 @@ li p {
   li {
     margin: 0;
   }
-  ol {
-    overflow-y: hidden;
-    height: fit-content;
-  }
+
   .title {
     height: fit-content;
   }
