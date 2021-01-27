@@ -18,7 +18,11 @@ function Recipes() {
   useEffect(() => {
     fetch(
       `${process.env.REACT_APP_EDAMAM_URL}?q=${foodInfo.foodType}&app_id=${process.env.REACT_APP_EDAMAM_ID}&app_key=${process.env.REACT_APP_EDAMAM_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}&to=30`,
-      { mode: "cors" }
+      {
+        headers: {
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     )
       .then((res) => res.json())
       .then((result) => {
