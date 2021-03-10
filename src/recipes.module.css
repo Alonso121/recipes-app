@@ -25,7 +25,9 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin-top: 2rem;
+  font-size: 28px;
+  padding-top: 2rem;
+  height: 3rem;
 }
 
 .image {
@@ -41,8 +43,13 @@
   background-color: #42037e;
   color: white;
   border: none;
-  border-radius: 5px;
-  padding: 3px 10px;
+  border-radius: 7px;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.showIngredients:hover {
+  background-color: #5603a3;
 }
 
 ol {
@@ -69,6 +76,11 @@ li p {
   font-size: 18px;
   line-height: 24px;
   letter-spacing: 0px;
+}
+
+.weight {
+  font-weight: 700;
+  margin-left: 10px;
 }
 
 .cookingLink {
@@ -113,6 +125,11 @@ li p {
 
   li p {
     letter-spacing: 0px;
+    font-size: 16px;
+  }
+
+  .weight {
+    font-size: 14px;
   }
   li {
     margin: 0;

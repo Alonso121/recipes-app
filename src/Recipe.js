@@ -30,11 +30,11 @@ function Recipe({ title, calories, image, ingredients, url }) {
                     src={ingredient.image}
                     alt=""
                   ></img>
-                  <p>{ingredient.text}</p>
                   <p>
-                    <b>
-                      <i>{Math.floor(ingredient.weight)}g</i>
-                    </b>
+                    {ingredient.text}
+                    <span className={style.weight}>
+                      {Math.floor(ingredient.weight)}g
+                    </span>
                   </p>
                 </li>
               ))}
