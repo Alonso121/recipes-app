@@ -1,4 +1,112 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  background-color: #a6cef7;
+}
+
+.App {
+  min-height: 100vh;
+  max-width: 80%;
+  margin: auto;
+  font-family: "Dosis", sans-serif;
+  border: 2px solid #42037e;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+.title {
+  text-align: center;
+  font-size: 3rem;
+  color: #42037e;
+  margin: 10px;
+  padding-top: 2rem;
+}
+
+.form {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-form {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.recipes {
+  display: flex;
+  align-items: flex-start;
+}
+
+.form-control {
+  margin: 10px 5%;
+  width: 150px;
+}
+
+.form-control select {
+  width: 140px;
+  background-color: white;
+  border-radius: 5px;
+  height: 32px;
+  border: 1px solid #42037e;
+}
+
+.form-control input {
+  width: 140px;
+  border-radius: 5px;
+  height: 30px;
+  border: 1px solid #42037e;
+}
+
+.form-control label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #42037e;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.search-button {
+  background: #42037e;
+  width: 10rem;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  margin: 10px;
+  width: 40%;
+}
+
+hr {
+  width: 60%;
+  color: white;
+  border: 1px solid;
+}
+
+.recipes {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+@media only screen and (max-width: 920px) {
+  .App {
+    max-width: 100%;
+  }
+  .form-control {
+    width: 90%;
+  }
+  .form-control input {
+    width: 100%;
+  }
+  .search-button {
+    width: 60%;
+  }
 }

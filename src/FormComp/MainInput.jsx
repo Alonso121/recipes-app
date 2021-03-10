@@ -2,11 +2,10 @@ import React from 'react'
 
 function MainInput({search,setSearch}) {
     return (
-        <div className="form-input">
-          <button className="search-button" type="submit">
-            search
-          </button>
+        <div className="form-control">          
+          <label htmlFor="search-item">Item to search:</label>
           <input
+            id="search-item"
             className="search-bar"
             placeholder="enter search item here"
             type="text"

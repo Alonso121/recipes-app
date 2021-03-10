@@ -1,7 +1,9 @@
-import React from "react";
+import { useState } from "react";
 import style from "./recipes.module.css";
 
 function Recipe({ title, calories, image, ingredients, url }) {
+  const [showIngredients, setShowIngredients] = useState(false);
+
   return (
     <div className={style.recipeSheet}>
       <div className={style.recipe}>
@@ -11,32 +13,43 @@ function Recipe({ title, calories, image, ingredients, url }) {
           <b>Calories: </b>
           {Math.floor(calories)}
         </p>
+        <button
+          className={style.showIngredients}
+          onClick={() => setShowIngredients(!showIngredients)}
+        >
+          Show Ingredients
+        </button>
 
-        <ol>
-          {ingredients.map((ingredient, index) => (
-            <li key={index}>
-              <img
-                className={style.ingredient}
-                src={ingredient.image}
-                alt=""
-              ></img>
-              <p>{ingredient.text}</p>
-              <p>
-                <b>
-                  <i>{Math.floor(ingredient.weight)}g</i>
-                </b>
-              </p>
-            </li>
-          ))}
-        </ol>
+        {showIngredients && (
+          <>
+            <ol>
+              {ingredients.map((ingredient, index) => (
+                <li key={index}>
+                  <img
+                    className={style.ingredient}
+                    src={ingredient.image}
+                    alt=""
+                  ></img>
+                  <p>{ingredient.text}</p>
+                  <p>
+                    <b>
+                      <i>{Math.floor(ingredient.weight)}g</i>
+                    </b>
+                  </p>
+                </li>
+              ))}
+            </ol>
+
+            <p className={style.cookingLink}>
+              For cooking instructions click{" "}
+              <a href={url} target="_blank" rel="noreferrer">
+                here
+              </a>
+              !
+            </p>
+          </>
+        )}
       </div>
-      <p className={style.cookingLink}>
-        For cooking instructions click{" "}
-        <a href={url} target="_blank" rel="noreferrer">
-          here
-        </a>
-        !
-      </p>
     </div>
   );
 }

@@ -25,8 +25,7 @@
   display: flex;
   justify-content: space-between;
   text-align: center;
-  margin: 2.2rem;
-  height: 6rem;
+  margin-top: 2rem;
 }
 
 .image {
@@ -34,9 +33,20 @@
   width: 250px;
   height: 250px;
   border: 3px solid #42037e;
+  margin: 2rem;
+}
+
+.showIngredients {
+  margin: 20px;
+  background-color: #42037e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 3px 10px;
 }
 
 ol {
+  width: 90%;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -63,7 +73,7 @@ li p {
 
 .cookingLink {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-style: italic;
 }
 
@@ -81,6 +91,7 @@ li p {
     box-shadow: 0px 0px 5px #e0c3fc;
   }
   li {
+    margin: 10px auto;
     width: 320px;
   }
 }

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CaloriesInput from "./FormComp/CaloriesInput";
 import DietInput from "./FormComp/DietInput";
 import MainInput from "./FormComp/MainInput";
+import SubmitButton from "./FormComp/SubmitButton";
 import Recipe from "./Recipe";
 
 function Recipes() {
@@ -17,7 +18,7 @@ function Recipes() {
 
   useEffect(() => {
     fetch(
-      `${process.env.REACT_APP_EDAMAM_URL}?q=${foodInfo.foodType}&app_id=${process.env.REACT_APP_EDAMAM_ID}&app_key=${process.env.REACT_APP_EDAMAM_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}&to=30`
+      `${process.env.REACT_APP_EDAMAM_URL}?q=${foodInfo.foodType}&app_id=${process.env.REACT_APP_EDAMAM_ID}&app_key=${process.env.REACT_APP_EDAMAM_KEY}&calories=${foodInfo.inquireCal}&diet=${foodInfo.diet}&to=20`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -33,13 +34,18 @@ function Recipes() {
 
   return (
     <div>
-      <form onSubmit={handleSubmit} className="search-form">
-        <MainInput search={search} setSearch={setSearch} />
-        <CaloriesInput
-          maxCalories={maxCalories}
-          setMaxCalories={setMaxCalories}
-        />
-        <DietInput setDietType={setDietType} />
+      <form className="form" onSubmit={handleSubmit}>
+        <div className="search-form">
+          <MainInput search={search} setSearch={setSearch} />
+          <CaloriesInput
+            maxCalories={maxCalories}
+            setMaxCalories={setMaxCalories}
+          />
+          <DietInput setDietType={setDietType} />
+        </div>
+        <hr />
+        <SubmitButton />
+        <hr />
       </form>
 
       <div className="recipes">

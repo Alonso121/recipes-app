@@ -2,7 +2,7 @@ import React from 'react'
 
 function DietInput({setDietType}) {
     return (
-        <div className="form-input">
+        <div className="form-control">
             <label htmlFor="diet-type">Choose a diet type:</label>
        
         <select id="diet-type" onChange={(e) => setDietType(e.target.value)}>
